@@ -31,14 +31,16 @@ func play_animation(direction: float) -> void:
 	# Flip character left/right
 	if direction != 0:
 		animated_sprite_2d.flip_h = direction < 0
-
-	# Jump animation has priority
-	if not is_on_floor():
+		
+	if Input.is_action_just_pressed("up") and not is_on_floor():
 		animated_sprite_2d.play("jump")
 
 	# Running
 	elif direction != 0:
 		animated_sprite_2d.play("run")
+		
+	elif not is_on_floor():
+		animated_sprite_2d.play("swim")
 
 	# Idle
 	else:

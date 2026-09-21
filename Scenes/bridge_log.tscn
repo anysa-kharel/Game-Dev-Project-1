@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://df4jfs40xshnv"]
+
+[ext_resource type="Texture2D" uid="uid://c2uc425mjokag" path="res://assets/Background/Bridge-log.png" id="1_fg3p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyd5k"]
+size = Vector2(87, 32)
+
+[node name="BridgeLog" type="Sprite2D" unique_id=1714025382]
+texture = ExtResource("1_fg3p6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1605814509]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=927283016]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qyd5k")

@@ -71,6 +71,30 @@ region = Rect2(1600, 1280, 400, 320)
 atlas = ExtResource("1_v0iea")
 region = Rect2(2000, 1280, 400, 320)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(400, 1600, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(800, 1600, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(1200, 1600, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(1600, 1600, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(2000, 1600, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 1920, 400, 320)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yp7c"]
 animations = [{
 "frames": [{
@@ -138,6 +162,29 @@ animations = [{
 "loop": 1,
 "name": &"run",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi64h")
+}],
+"loop": 1,
+"name": &"swim",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bef7"]
@@ -149,9 +196,14 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=27991916]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8yp7c")
-animation = &"jump"
-frame_progress = 0.7593111
+animation = &"idle"
+frame_progress = 0.8894606
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875179640]
 position = Vector2(1.5, 12)
 shape = SubResource("RectangleShape2D_1bef7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1157500320]
+limit_left = 0
+limit_top = 0
+limit_bottom = 720
