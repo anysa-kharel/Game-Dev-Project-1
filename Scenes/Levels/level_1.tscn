@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1osbkn7fpuu4" path="res://assets/Background/Water-1.png.png" id="4_cyadu"]
 [ext_resource type="PackedScene" uid="uid://yubjl3o15qs6" path="res://Scenes/coin.tscn" id="5_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dgpbntwib460i" path="res://Scenes/score.tscn" id="6_xgxfi"]
+[ext_resource type="Script" uid="uid://bewyyercpujpq" path="res://Scripts/water.gd" id="8_jv26f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgxfi"]
 texture = ExtResource("3_iixi8")
@@ -146,6 +147,9 @@ texture = ExtResource("4_cyadu")
 sources/1 = SubResource("TileSetAtlasSource_xgxfi")
 sources/2 = SubResource("TileSetAtlasSource_5f3p6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bef7"]
+size = Vector2(1273, 154)
+
 [node name="Level1" type="Node2D" unique_id=1271833527]
 
 [node name="GameManager" type="Node" parent="." unique_id=1274214258]
@@ -249,3 +253,18 @@ offset_bottom = 40.0
 
 [node name="Score" parent="CanvasLayer/Control/VBoxContainer" unique_id=317762082 instance=ExtResource("6_xgxfi")]
 layout_mode = 2
+
+[node name="WaterArea" type="Area2D" parent="." unique_id=1262420055]
+script = ExtResource("8_jv26f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea" unique_id=1430973415]
+position = Vector2(638.5, 661)
+shape = SubResource("RectangleShape2D_1bef7")
+
+[node name="BridgeLog" parent="WaterArea" unique_id=22220312 instance=ExtResource("3_3mqfk")]
+position = Vector2(754.813, 485.23987)
+rotation = 1.5934856
+scale = Vector2(2.0876694, 1)
+
+[connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
+[connection signal="body_exited" from="WaterArea" to="WaterArea" method="_on_body_exited"]
