@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yubjl3o15qs6" path="res://Scenes/coin.tscn" id="5_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dgpbntwib460i" path="res://Scenes/score.tscn" id="6_xgxfi"]
 [ext_resource type="Script" uid="uid://bewyyercpujpq" path="res://Scripts/water.gd" id="8_jv26f"]
+[ext_resource type="PackedScene" uid="uid://ccjwf026kwxbl" path="res://Scenes/ladder.tscn" id="9_rb0md"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgxfi"]
 texture = ExtResource("3_iixi8")
@@ -148,7 +149,7 @@ sources/1 = SubResource("TileSetAtlasSource_xgxfi")
 sources/2 = SubResource("TileSetAtlasSource_5f3p6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bef7"]
-size = Vector2(1273, 154)
+size = Vector2(2111, 154)
 
 [node name="Level1" type="Node2D" unique_id=1271833527]
 
@@ -193,23 +194,23 @@ position = Vector2(75, 369)
 scale = Vector2(1.5625, 1)
 
 [node name="BridgeLog5" parent="BridgeLogs" unique_id=1572630294 instance=ExtResource("3_3mqfk")]
-position = Vector2(1517, 369)
+position = Vector2(1813.5, 369)
 scale = Vector2(1.5625, 1)
 
 [node name="BridgeLog2" parent="BridgeLogs" unique_id=1376367535 instance=ExtResource("3_3mqfk")]
-position = Vector2(377.5, 369)
+position = Vector2(421, 369)
 scale = Vector2(2.34375, 1)
 
 [node name="BridgeLog4" parent="BridgeLogs" unique_id=1495876793 instance=ExtResource("3_3mqfk")]
-position = Vector2(1217, 369)
+position = Vector2(1478.5001, 369)
 scale = Vector2(2.34375, 1)
 
 [node name="BridgeLog3" parent="BridgeLogs" unique_id=1252624313 instance=ExtResource("3_3mqfk")]
-position = Vector2(792.50006, 369)
+position = Vector2(966.50006, 369)
 scale = Vector2(3.7604172, 1)
 
 [node name="BridgeLog6" parent="BridgeLogs" unique_id=607855501 instance=ExtResource("3_3mqfk")]
-position = Vector2(1926.25, 369)
+position = Vector2(2222.75, 369)
 scale = Vector2(3.8697932, 1)
 
 [node name="Coins" type="Node" parent="." unique_id=1717692775]
@@ -218,22 +219,22 @@ scale = Vector2(3.8697932, 1)
 position = Vector2(406, 282)
 
 [node name="Coin2" parent="Coins" unique_id=931575368 instance=ExtResource("5_cyadu")]
-position = Vector2(751, 311)
+position = Vector2(879, 308)
 
 [node name="Coin3" parent="Coins" unique_id=1861999828 instance=ExtResource("5_cyadu")]
-position = Vector2(919, 268)
+position = Vector2(1081, 257)
 
 [node name="Coin4" parent="Coins" unique_id=885097116 instance=ExtResource("5_cyadu")]
-position = Vector2(1245, 272)
+position = Vector2(1479, 276)
 
 [node name="Coin5" parent="Coins" unique_id=1917302465 instance=ExtResource("5_cyadu")]
-position = Vector2(1513, 322)
+position = Vector2(1759, 249)
 
 [node name="Coin6" parent="Coins" unique_id=49009709 instance=ExtResource("5_cyadu")]
-position = Vector2(1833, 250)
+position = Vector2(1866, 293)
 
 [node name="Coin7" parent="Coins" unique_id=883775785 instance=ExtResource("5_cyadu")]
-position = Vector2(1973, 285)
+position = Vector2(2158, 290)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=794634677]
 
@@ -258,13 +259,17 @@ layout_mode = 2
 script = ExtResource("8_jv26f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea" unique_id=1430973415]
-position = Vector2(638.5, 661)
+position = Vector2(1057.5, 661)
 shape = SubResource("RectangleShape2D_1bef7")
 
-[node name="BridgeLog" parent="WaterArea" unique_id=22220312 instance=ExtResource("3_3mqfk")]
-position = Vector2(754.813, 485.23987)
-rotation = 1.5934856
-scale = Vector2(2.0876694, 1)
+[node name="Ladder3" parent="." unique_id=748759775 instance=ExtResource("9_rb0md")]
+position = Vector2(754, 513)
+
+[node name="Ladder2" parent="." unique_id=1169199959 instance=ExtResource("9_rb0md")]
+position = Vector2(754, 457)
+
+[node name="Ladder" parent="." unique_id=156364291 instance=ExtResource("9_rb0md")]
+position = Vector2(754, 398)
 
 [connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
 [connection signal="body_exited" from="WaterArea" to="WaterArea" method="_on_body_exited"]

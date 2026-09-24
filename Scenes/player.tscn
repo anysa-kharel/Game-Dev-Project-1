@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://c2bdiqpaadwlp" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://3gm5tr01by4l" path="res://assets/Player/sprite_sheet.png" id="1_v0iea"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(400, 320, 400, 320)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
 region = Rect2(0, 640, 400, 320)
@@ -97,6 +105,17 @@ region = Rect2(0, 1920, 400, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yp7c"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1odr")
+}],
+"loop": 1,
+"name": &"climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cvnsp")
@@ -196,8 +215,8 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=27991916]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8yp7c")
-animation = &"idle"
-frame_progress = 0.8894606
+animation = &"climb"
+frame_progress = 0.6816937
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875179640]
 position = Vector2(1.5, 12)
