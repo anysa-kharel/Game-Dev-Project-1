@@ -10,5 +10,5 @@ func add_score():
 	GameState.score += 1
 	score.text = str(GameState.score)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b56a30uwkpjhk"]
+
+[ext_resource type="Texture2D" uid="uid://c1osbkn7fpuu4" path="res://assets/Background/Water-1.png.png" id="1_gf5bf"]
+[ext_resource type="Texture2D" uid="uid://cro1j8c5x75ry" path="res://assets/Background/Water-2.png.png" id="2_qq3op"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bef7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qq3op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gf5bf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="water" type="Sprite2D" unique_id=195400393]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gf5bf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=886425766]
+sprite_frames = SubResource("SpriteFrames_1bef7")
+autoplay = "default"
+frame_progress = 0.6695642
