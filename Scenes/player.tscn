@@ -215,8 +215,8 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=27991916]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8yp7c")
-animation = &"climb"
-frame_progress = 0.6816937
+animation = &"idle"
+frame_progress = 0.47515935
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875179640]
 position = Vector2(1.5, 12)

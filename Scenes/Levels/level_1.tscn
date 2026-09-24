@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dgpbntwib460i" path="res://Scenes/score.tscn" id="6_xgxfi"]
 [ext_resource type="Script" uid="uid://bewyyercpujpq" path="res://Scripts/water.gd" id="8_jv26f"]
 [ext_resource type="PackedScene" uid="uid://ccjwf026kwxbl" path="res://Scenes/ladder.tscn" id="9_rb0md"]
+[ext_resource type="Script" uid="uid://7c1wqksxu6xl" path="res://Scripts/background.gd" id="10_hwvp3"]
+[ext_resource type="Texture2D" uid="uid://dy1f46y31ya24" path="res://assets/Background/sky-background.jpg" id="10_u5ghp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgxfi"]
 texture = ExtResource("3_iixi8")
@@ -159,26 +161,31 @@ script = ExtResource("1_5f3p6")
 [node name="Clouds" type="Node" parent="." unique_id=792851161]
 
 [node name="Clouds1" type="Sprite2D" parent="Clouds" unique_id=449380881]
+visible = false
 position = Vector2(277, 62.00001)
 scale = Vector2(0.16354167, 0.16354167)
 texture = ExtResource("2_3mqfk")
 
 [node name="Clouds5" type="Sprite2D" parent="Clouds" unique_id=583134950]
+visible = false
 position = Vector2(2010.9998, 62.00001)
 scale = Vector2(0.16354167, 0.16354167)
 texture = ExtResource("2_3mqfk")
 
 [node name="Clouds2" type="Sprite2D" parent="Clouds" unique_id=697156340]
+visible = false
 position = Vector2(775.99994, 106)
 scale = Vector2(0.16354167, 0.16354167)
 texture = ExtResource("2_3mqfk")
 
 [node name="Clouds4" type="Sprite2D" parent="Clouds" unique_id=1074121666]
+visible = false
 position = Vector2(1675, 106)
 scale = Vector2(0.16354167, 0.16354167)
 texture = ExtResource("2_3mqfk")
 
 [node name="Clouds3" type="Sprite2D" parent="Clouds" unique_id=1171587944]
+visible = false
 position = Vector2(1256, 56.000015)
 scale = Vector2(0.16354167, 0.16354167)
 texture = ExtResource("2_3mqfk")
@@ -211,6 +218,14 @@ scale = Vector2(3.7604172, 1)
 
 [node name="BridgeLog6" parent="BridgeLogs" unique_id=607855501 instance=ExtResource("3_3mqfk")]
 position = Vector2(2222.75, 369)
+scale = Vector2(3.8697932, 1)
+
+[node name="BridgeLog7" parent="BridgeLogs" unique_id=18868828 instance=ExtResource("3_3mqfk")]
+position = Vector2(2808.0002, 369)
+scale = Vector2(3.8697932, 1)
+
+[node name="BridgeLog8" parent="BridgeLogs" unique_id=659216876 instance=ExtResource("3_3mqfk")]
+position = Vector2(3439.0002, 369)
 scale = Vector2(3.8697932, 1)
 
 [node name="Coins" type="Node" parent="." unique_id=1717692775]
@@ -270,6 +285,17 @@ position = Vector2(754, 457)
 
 [node name="Ladder" parent="." unique_id=156364291 instance=ExtResource("9_rb0md")]
 position = Vector2(754, 398)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=526239910]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1481638451]
+motion_mirroring = Vector2(3000, 0)
+script = ExtResource("10_hwvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=98811934]
+position = Vector2(1568, 564)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_u5ghp")
 
 [connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
 [connection signal="body_exited" from="WaterArea" to="WaterArea" method="_on_body_exited"]
