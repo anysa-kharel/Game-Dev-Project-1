@@ -6,12 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://c1osbkn7fpuu4" path="res://assets/Background/Water-1.png.png" id="4_cyadu"]
 [ext_resource type="PackedScene" uid="uid://yubjl3o15qs6" path="res://Scenes/coin.tscn" id="5_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dgpbntwib460i" path="res://Scenes/score.tscn" id="6_xgxfi"]
+[ext_resource type="Texture2D" uid="uid://cy5jgxogk65as" path="res://assets/Background/flat-wood.png" id="7_7r2dd"]
 [ext_resource type="Script" uid="uid://bewyyercpujpq" path="res://Scripts/water.gd" id="8_jv26f"]
+[ext_resource type="FontFile" uid="uid://cbcq6vmsyqwf6" path="res://assets/fonts/PixelOperator8.ttf" id="8_k2mw1"]
 [ext_resource type="Texture2D" uid="uid://cgljgjtevnrfn" path="res://assets/Background/blue-background.png" id="9_afv7b"]
 [ext_resource type="PackedScene" uid="uid://ccjwf026kwxbl" path="res://Scenes/ladder.tscn" id="9_rb0md"]
 [ext_resource type="Script" uid="uid://7c1wqksxu6xl" path="res://Scripts/background.gd" id="10_hwvp3"]
 [ext_resource type="Texture2D" uid="uid://dy1f46y31ya24" path="res://assets/Background/sky-background.jpg" id="10_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://b56a30uwkpjhk" path="res://Scenes/water.tscn" id="11_hwvp3"]
+[ext_resource type="Texture2D" uid="uid://76tc1osin5uf" path="res://assets/Background/goal-board.png" id="15_tjl6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgxfi"]
 texture = ExtResource("3_iixi8")
@@ -198,6 +201,14 @@ scale = Vector2(3.8697932, 1)
 position = Vector2(3448.0002, 369)
 scale = Vector2(3.8697932, 1)
 
+[node name="BridgeLog9" parent="BridgeLogs" unique_id=207230025 instance=ExtResource("3_3mqfk")]
+position = Vector2(4103, 369)
+scale = Vector2(3.8697932, 1)
+
+[node name="BridgeLog10" parent="BridgeLogs" unique_id=528796943 instance=ExtResource("3_3mqfk")]
+position = Vector2(4722, 369)
+scale = Vector2(3.8697932, 1)
+
 [node name="Coins" type="Node" parent="." unique_id=1717692775]
 
 [node name="Coin" parent="Coins" unique_id=21786936 instance=ExtResource("5_cyadu")]
@@ -233,6 +244,15 @@ position = Vector2(3313, 269)
 [node name="Coin11" parent="Coins" unique_id=1216960676 instance=ExtResource("5_cyadu")]
 position = Vector2(3582, 275)
 
+[node name="Coin12" parent="Coins" unique_id=1526847926 instance=ExtResource("5_cyadu")]
+position = Vector2(4028, 216)
+
+[node name="Coin13" parent="Coins" unique_id=1986283991 instance=ExtResource("5_cyadu")]
+position = Vector2(4232, 301)
+
+[node name="Coin14" parent="Coins" unique_id=167486221 instance=ExtResource("5_cyadu")]
+position = Vector2(4584, 214)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=794634677]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1797357147]
@@ -242,7 +262,7 @@ anchor_top = 0.06
 anchor_right = 0.129
 anchor_bottom = 0.06
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 39.999996
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=342435878]
 layout_mode = 0
@@ -251,6 +271,30 @@ offset_bottom = 40.0
 
 [node name="Score" parent="CanvasLayer/Control/VBoxContainer" unique_id=317762082 instance=ExtResource("6_xgxfi")]
 layout_mode = 2
+
+[node name="FlatWood" type="Sprite2D" parent="CanvasLayer" unique_id=1063270186]
+position = Vector2(1137, 50)
+texture = ExtResource("7_7r2dd")
+
+[node name="Label" type="Label" parent="CanvasLayer/FlatWood" unique_id=1532447591]
+offset_left = -104.0
+offset_top = -25.0
+offset_right = 104.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("8_k2mw1")
+theme_override_font_sizes/font_size = 19
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/FlatWood" unique_id=163220019]
+offset_left = -100.0
+offset_top = 4.0
+offset_right = 108.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("8_k2mw1")
+theme_override_font_sizes/font_size = 14
+text = "Cross The Bridge"
+horizontal_alignment = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=526239910]
 
@@ -462,9 +506,11 @@ position = Vector2(3715, 416)
 position = Vector2(3777, 416)
 
 [node name="water61" parent="Water-flow" unique_id=1512883216 instance=ExtResource("11_hwvp3")]
+z_index = -1
 position = Vector2(3841, 416)
 
 [node name="water62" parent="Water-flow" unique_id=659005457 instance=ExtResource("11_hwvp3")]
+z_index = -1
 position = Vector2(3905, 416)
 
 [node name="water63" parent="Water-flow" unique_id=242088433 instance=ExtResource("11_hwvp3")]
@@ -486,7 +532,10 @@ position = Vector2(4222, 416)
 position = Vector2(4286, 416)
 
 [node name="water69" parent="Water-flow" unique_id=2006233891 instance=ExtResource("11_hwvp3")]
-position = Vector2(4357, 416)
+position = Vector2(4356, 415)
+
+[node name="water99" parent="Water-flow" unique_id=1507153300 instance=ExtResource("11_hwvp3")]
+position = Vector2(4347, 415)
 
 [node name="water70" parent="Water-flow" unique_id=640505178 instance=ExtResource("11_hwvp3")]
 position = Vector2(4419, 416)
@@ -599,6 +648,29 @@ position = Vector2(2653, 457)
 
 [node name="Ladder6" parent="." unique_id=440448587 instance=ExtResource("9_rb0md")]
 position = Vector2(2653, 398)
+
+[node name="Ladder7" parent="." unique_id=1186032727 instance=ExtResource("9_rb0md")]
+position = Vector2(3887, 513)
+
+[node name="Ladder8" parent="." unique_id=1273148189 instance=ExtResource("9_rb0md")]
+position = Vector2(3887, 457)
+
+[node name="Ladder9" parent="." unique_id=193451145 instance=ExtResource("9_rb0md")]
+position = Vector2(3887, 398)
+
+[node name="GoalBoard" type="Sprite2D" parent="." unique_id=949654413]
+position = Vector2(4784, 311)
+scale = Vector2(0.1312499, 0.1312499)
+texture = ExtResource("15_tjl6l")
+
+[node name="Label" type="Label" parent="GoalBoard" unique_id=2337139]
+offset_left = -281.90497
+offset_top = -388.57172
+offset_right = 243.09503
+offset_bottom = -237.57172
+theme_override_fonts/font = ExtResource("8_k2mw1")
+theme_override_font_sizes/font_size = 150
+text = "GOAL"
 
 [connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
 [connection signal="body_exited" from="WaterArea" to="WaterArea" method="_on_body_exited"]
