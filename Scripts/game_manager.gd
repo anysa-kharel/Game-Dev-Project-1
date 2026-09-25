@@ -12,9 +12,9 @@ func next_level():
 		get_tree().call_deferred(
 		"change_scene_to_file","res://Scenes/Levels/level_3.tscn")
 		GameState.level += 1
-	else:
+	elif GameState.level == 3:
 		get_tree().call_deferred(
-		"change_scene_to_file","res://Scenes/Levels/level_2.tscn")
+		"change_scene_to_file","res://Scenes/game_won.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
