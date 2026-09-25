@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dvbk4u5jvpn0r"]
+
+[ext_resource type="Texture2D" uid="uid://76tc1osin5uf" path="res://assets/Background/goal-board.png" id="1_2cwi7"]
+[ext_resource type="Script" uid="uid://b64u2il2oh0rp" path="res://Scripts/checkpoint.gd" id="1_e75gc"]
+[ext_resource type="FontFile" uid="uid://cbcq6vmsyqwf6" path="res://assets/fonts/PixelOperator8.ttf" id="2_e75gc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bef7"]
+size = Vector2(785, 910)
+
+[node name="Checkpoint" type="Area2D" unique_id=1539514345]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_e75gc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1066967352]
+texture = ExtResource("1_2cwi7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2117258140]
+position = Vector2(5.5, -6)
+shape = SubResource("RectangleShape2D_1bef7")
+
+[node name="Label" type="Label" parent="." unique_id=158823765]
+offset_left = -281.90497
+offset_top = -388.57172
+offset_right = 243.09503
+offset_bottom = -237.57172
+theme_override_fonts/font = ExtResource("2_e75gc")
+theme_override_font_sizes/font_size = 150
+text = "GOAL"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

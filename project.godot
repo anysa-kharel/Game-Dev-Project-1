@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CrossingTheBridge"
-run/main_scene="uid://ikb3nhlf8b5q"
+run/main_scene="uid://bpl7ua8ej7rrm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

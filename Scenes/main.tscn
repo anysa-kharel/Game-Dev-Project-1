@@ -15,6 +15,7 @@ size = Vector2(3074.75, 39)
 position = Vector2(-1, -13)
 
 [node name="Player" parent="." unique_id=76821104 instance=ExtResource("1_jjgbg")]
+visible = false
 position = Vector2(60, 289)
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=1507358781]

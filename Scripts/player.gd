@@ -10,9 +10,26 @@ const CLIMB_SPEED = 200.0
 var is_swimming = false
 var is_on_ladder = false
 var is_climbing = false
-
+var respawn_position: Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	respawn_position = global_position
+	
+	
+func respawn():
+	if GameState.lives > 0:
+		if velocity.x > 0:
+			global_position.x -= 80
+		elif velocity.x < 0:
+			global_position.x += 80
+		else:
+			global_position.x -= 80
+
+		await get_tree().create_timer(1.0).timeout
+		velocity = Vector2.ZERO
+	
 
 func _physics_process(delta: float) -> void:
 	if is_on_ladder and Input.is_action_pressed("up"):
