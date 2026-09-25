@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://12ic3jn15neg"]
+
+[ext_resource type="Texture2D" uid="uid://c2uc425mjokag" path="res://assets/Background/Bridge-log.png" id="1_w1jm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnlxl"]
+size = Vector2(122, 32)
+
+[node name="MovingLog" type="AnimatableBody2D" unique_id=30597907]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762846073]
+position = Vector2(-4.000004, 0)
+shape = SubResource("RectangleShape2D_wnlxl")
+debug_color = Color(0.24692869, 0.53483933, 0.90943205, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724271780]
+position = Vector2(-3.999999, 0)
+scale = Vector2(1.2708334, 1)
+texture = ExtResource("1_w1jm5")
