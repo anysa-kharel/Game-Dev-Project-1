@@ -19,6 +19,7 @@ func next_level():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	score.text = str(GameState.score)
+	lives.text = str(GameState.lives)
 
 func add_score():
 	GameState.score += 1
