@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bgq61lwkchsm6"]
+
+[ext_resource type="Texture2D" uid="uid://bvupgfy7sj42b" path="res://assets/Background/brown-bg.png" id="1_8fo1c"]
+[ext_resource type="Script" uid="uid://dl5ibp6xym4uw" path="res://Scripts/game_over.gd" id="1_ek8ke"]
+[ext_resource type="FontFile" uid="uid://cbcq6vmsyqwf6" path="res://assets/fonts/PixelOperator8.ttf" id="1_ojehl"]
+
+[node name="GameOver" type="Control" unique_id=1703023018]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ek8ke")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=833058570]
+position = Vector2(622, 360)
+scale = Vector2(62, 62)
+texture = ExtResource("1_8fo1c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1945370343]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 308.0
+offset_right = 767.0
+offset_bottom = 410.0
+theme_override_constants/separation = 35
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2009278927]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ojehl")
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2137104600]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ojehl")
+theme_override_font_sizes/font_size = 26
+text = "Try Again"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1996014146]
+position = Vector2(640, 355)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

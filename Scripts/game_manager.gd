@@ -19,6 +19,10 @@ func lose_life() -> void:
 	GameState.lives -= 1
 	lives.text = str(GameState.lives)
 	
-
+func game_over() -> void:
+	get_tree().call_deferred(
+		"change_scene_to_file",
+		"res://Scenes/game_over.tscn"
+	)
 func _process(_delta: float) -> void:
 	pass

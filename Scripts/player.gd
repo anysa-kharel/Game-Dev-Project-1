@@ -13,6 +13,7 @@ var is_climbing = false
 var respawn_position: Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var game_manager: Node = $"../GameManager"
 
 func _ready() -> void:
 	respawn_position = global_position
@@ -29,7 +30,8 @@ func respawn():
 
 		await get_tree().create_timer(1.0).timeout
 		velocity = Vector2.ZERO
-	
+	else:
+		game_manager.game_over()
 
 func _physics_process(delta: float) -> void:
 	if is_on_ladder and Input.is_action_pressed("up"):

@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://b56a30uwkpjhk" path="res://Scenes/water.tscn" id="11_hwvp3"]
 [ext_resource type="PackedScene" uid="uid://dvbk4u5jvpn0r" path="res://Scenes/checkpoint.tscn" id="15_tjl6l"]
 [ext_resource type="PackedScene" uid="uid://brn4661ses4k4" path="res://Scenes/player.tscn" id="16_3628d"]
-[ext_resource type="PackedScene" uid="uid://c3dowijg6kaig" path="res://Scenes/obstacle.tscn" id="18_31phq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgxfi"]
 texture = ExtResource("3_iixi8")
@@ -689,9 +688,6 @@ shape = SubResource("RectangleShape2D_3628d")
 position = Vector2(3074.25, 742)
 scale = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_irw6p")
-
-[node name="Obstacle" parent="." unique_id=1768413367 instance=ExtResource("18_31phq")]
-position = Vector2(1008.99994, 340)
 
 [connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
 [connection signal="body_exited" from="WaterArea" to="WaterArea" method="_on_body_exited"]

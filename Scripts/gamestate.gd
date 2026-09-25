@@ -8,3 +8,4 @@ func reset():
 	score = 0
 	level = 1
 	lives = 3
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
