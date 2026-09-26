@@ -3,7 +3,7 @@ extends Control
 @onready var label_3: Label = $VBoxContainer/Label3
 
 func _ready() -> void:
-	label_3.text = "Coins:" + str(GameState.score)
+	label_3.text = "Coins:" + str(GameState.score) + "/47"
 
 
 
