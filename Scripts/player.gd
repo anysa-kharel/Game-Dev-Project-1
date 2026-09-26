@@ -14,6 +14,7 @@ var respawn_position: Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var game_manager: Node = $"../GameManager"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	respawn_position = global_position
@@ -57,6 +58,7 @@ func land_movement(delta: float) -> void:
 
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		audio_stream_player_2d.play()
 
 func swim_movement() -> void:
 	var horizontal := Input.get_axis("left", "right")
@@ -98,6 +100,7 @@ func play_animation() -> void:
 
 		if Input.is_action_just_pressed("up") and is_on_floor():
 			animated_sprite_2d.play("jump")
+			audio_stream_player_2d.play()
 
 		elif direction != 0 and is_on_floor():
 			animated_sprite_2d.play("run")
