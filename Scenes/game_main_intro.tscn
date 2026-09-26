@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://baf8q0etnepoc"]
+
+[ext_resource type="Texture2D" uid="uid://di8o3pe76na8r" path="res://assets/Background/game-intro.png" id="1_pp47d"]
+[ext_resource type="Script" uid="uid://ccg38l0kielbw" path="res://Scripts/game_main_intro.gd" id="1_ruaxa"]
+[ext_resource type="FontFile" uid="uid://cbcq6vmsyqwf6" path="res://assets/fonts/PixelOperator8.ttf" id="2_jj5xc"]
+
+[node name="GameMainIntro" type="Control" unique_id=715043657]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ruaxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036584832]
+position = Vector2(644.6666, 362.99994)
+scale = Vector2(1.0027775, 1.0027778)
+texture = ExtResource("1_pp47d")
+
+[node name="Button" type="Button" parent="." unique_id=15912217]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 457.0
+offset_right = 784.0
+offset_bottom = 520.0
+theme_override_fonts/font = ExtResource("2_jj5xc")
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
